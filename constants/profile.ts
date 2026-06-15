@@ -58,7 +58,6 @@ export type Profile = {
   socials: {
     github: SocialLink;
     email: SocialLink;
-    linkedin: SocialLink;
   };
   hero: {
     badge: string;
@@ -78,21 +77,17 @@ export const profile: Profile = {
   name: "박재형",
   title: "백엔드 개발자 | AI 데이터 엔지니어",
   location: "서울, 대한민국",
-  availability: "백엔드 및 AI 플랫폼 관련 역할에 열려 있습니다",
+  availability: "백엔드 및 AI 플랫폼 개발자입니다.",
   email: "jaehyung_96@naver.com",
-  siteUrl: "https://example-portfolio.vercel.app",
+  siteUrl: "https://jhpark-portfolio.vercel.app",
   socials: {
     github: {
       label: "깃허브",
-      href: "https://github.com/your-github",
+      href: "https://github.com/jhpark-jarvis",
     },
     email: {
       label: "이메일",
       href: "mailto:jaehyung_96@naver.com",
-    },
-    linkedin: {
-      label: "링크드인",
-      href: "https://linkedin.com/in/your-linkedin",
     },
   },
   hero: {
@@ -132,10 +127,10 @@ export const profile: Profile = {
       skills: [
         { name: "Python", level: 95 },
         { name: "C#", level: 90 },
-        { name: "JavaScript", level: 82 },
-        { name: "SQL", level: 88 },
-        { name: "C++", level: 68 },
-        { name: "Kotlin", level: 56 },
+        { name: "JavaScript", level: 85 },
+        { name: "SQL", level: 85 },
+        { name: "C++", level: 70 },
+        { name: "Kotlin", level: 60 },
       ],
     },
     {
@@ -143,37 +138,40 @@ export const profile: Profile = {
       description: "백엔드 서비스, UI 도구, AI 프로토타이핑에 활용한 프레임워크와 라이브러리입니다.",
       skills: [
         { name: "ASP.NET Core MVC", level: 90 },
-        { name: "ASP.NET WebForm", level: 74 },
-        { name: "Flask", level: 92 },
-        { name: "Django", level: 78 },
-        { name: "Node.js", level: 76 },
+        { name: "ASP.NET WebForm", level: 75 },
+        { name: "Flask", level: 90 },
+        { name: "Django", level: 85 },
+        { name: "FastAPI", level: 80 },
+        { name: "Node.js", level: 75 },
         { name: "WPF", level: 70 },
-        { name: "WinForms", level: 66 },
-        { name: "PyTorch", level: 72 },
-        { name: "OpenCV", level: 74 },
-        { name: "Selenium", level: 86 },
-        { name: "HtmlAgilityPack", level: 64 },
+        { name: "PyTorch", level: 70 },
+        { name: "OpenCV", level: 70 },
+        { name: "Selenium", level: 90 },
+        { name: "HtmlAgilityPack", level: 80 },
+        { name: "Playwright", level: 80 },
       ],
     },
     {
       title: "데이터베이스",
       description: "트랜잭션 처리, 캐싱, 경량 로컬 워크플로에 사용한 저장소 기술입니다.",
       skills: [
-        { name: "MS SQL", level: 88 },
-        { name: "MongoDB", level: 84 },
-        { name: "Redis", level: 81 },
-        { name: "SQLite", level: 73 },
+        { name: "MS-SQL", level: 90 },
+        { name: "MariaDB", level: 80 },
+        { name: "MongoDB", level: 75 },
+        { name: "Redis", level: 80 },
+        { name: "SQLite", level: 90 },
       ],
     },
     {
       title: "인프라",
       description: "운영 시스템과 자동화 환경에서 사용한 배포 및 런타임 기술입니다.",
       skills: [
-        { name: "Linux", level: 86 },
-        { name: "Docker", level: 83 },
-        { name: "Azure IIS", level: 72 },
-        { name: "AWS Lambda", level: 66 },
-        { name: "EPICS", level: 71 },
+        { name: "Linux", level: 90 },
+        { name: "Docker", level: 90 },
+        { name: "Azure IIS", level: 80 },
+        { name: "AWS Lambda", level: 70 },
+        { name: "AWS", level: 85},
+        { name: "EPICS", level: 70 },
       ],
     },
     {
@@ -181,14 +179,26 @@ export const profile: Profile = {
       description: "협업과 배포 워크플로를 지원하는 엔지니어링 도구들입니다.",
       skills: [
         { name: "Git", level: 90 },
-        { name: "Jira", level: 82 },
+        { name: "Jira", level: 85 },
         { name: "Slack", level: 85 },
+        { name: "Notion", level: 90 },
+        { name: "Jenkins", level: 90 },
       ],
     },
   ],
   career: [
     {
-      company: "MediaWill Networks (Albamon)",
+      company: "휴식기",
+      period: "2025.05 ~ 현재",
+      summary: "몸 상태가 좋지 않아 건강을 회복하는 기간을 가졌습니다. 개인 프로젝트 탐색과 기술 트렌드 학습을 병행했습니다. 지금은 멀쩡합니다!",
+      highlights: [
+        "건강 회복",
+        "개인 프로젝트 탐색",
+        "기술 트렌드 학습",
+      ],
+    },
+    {
+      company: "미디어윌네트웍스 (알바천국)",
       period: "2025.04 ~ 2025.05",
       summary: "레거시 내부 플랫폼을 안정화하고 고도화하는 단기 현대화 작업을 수행했습니다.",
       highlights: [
@@ -199,7 +209,7 @@ export const profile: Profile = {
       ],
     },
     {
-      company: "Mobis",
+      company: "모비스(Mobiis)",
       period: "2024.04 ~ 2025.04",
       summary: "산업 및 사내 지식 활용 사례를 위해 Linux 기반 환경에서 운영 도구와 데이터 워크플로를 구축했습니다.",
       highlights: [
@@ -207,16 +217,18 @@ export const profile: Profile = {
         "Linux 환경",
         "Docker 자동화",
         "Whisper 전사 시스템",
-        "사내 검색 플랫폼",
+        "Keyword Extract 기술 활용 : 문서 검색 플랫폼 구축",
       ],
     },
     {
-      company: "Pinup",
+      company: "핀업(Finup)",
       period: "2021.11 ~ 2024.02",
       summary: "빠르게 움직이는 금융 서비스 환경에서 백엔드 및 AI 기반 내부 시스템을 구축했습니다.",
       highlights: [
         "실시간 금융 데이터 플랫폼",
+        "백엔드 시스템 구축",
         "백오피스 시스템",
+        "MSSQL",
         "MongoDB",
         "Redis",
         "Selenium 자동화",
@@ -225,14 +237,14 @@ export const profile: Profile = {
       ],
     },
     {
-      company: "DeltaX / RNDeep",
+      company: "DeltaX & RnDeep",
       period: "2019.10 ~ 2021.09",
       summary: "크롤링, 대시보드, 컴퓨터 비전 영역에 걸친 응용 AI 프로토타입과 데모 시스템을 개발했습니다.",
       highlights: [
-        "Flask AI 데모 시스템",
-        "딥페이크 데모",
-        "대시보드 개발",
-        "데이터 크롤링",
+        "AI 데모 시스템 구축",
+        "DeepFake 탐지 데모",
+        "AI 분석 결과 대시보드 개발",
+        "데이터 크롤링/AI 학습용 데이터 구축",
         "Linux AI 서버",
         "컴퓨터 비전 프로젝트",
       ],
@@ -241,7 +253,7 @@ export const profile: Profile = {
   projects: [
     {
       name: "금융 데이터 플랫폼",
-      technologies: [".NET Core MVC", "MongoDB", "Redis"],
+      technologies: [".NET Core MVC", "MongoDB", "Redis", "MSSQL", "Selenium", "Python", "C#", "FastAPI"],
       overview:
         "내부 팀이 시장 흐름을 모니터링하고 운영 워크플로를 관리하며 서비스 의사결정을 지원할 수 있도록 실시간 금융 데이터 플랫폼을 설계하고 운영했습니다.",
       challenges:
@@ -314,22 +326,22 @@ export const profile: Profile = {
   ],
   contact: [
     {
-      label: "깃허브",
-      value: "@your-github",
-      href: "https://github.com/your-github",
+      label: "GitHub",
+      value: "@jhpark-jarvis",
+      href: "https://github.com/jhpark-jarvis",
       description: "코드 샘플, 실험 프로젝트, 개인 엔지니어링 작업물을 볼 수 있습니다.",
     },
     {
       label: "이메일",
       value: "jaehyung_96@naver.com",
       href: "mailto:jaehyung_96@naver.com",
-      description: "채용 문의나 프로젝트 관련 대화를 나누기 가장 좋은 채널입니다.",
+      description: "개인 이메일 주소입니다.",
     },
-    // {
-    //   label: "링크드인",
-    //   value: "linkedin.com/in/your-linkedin",
-    //   href: "https://linkedin.com/in/your-linkedin",
-    //   description: "경력 요약과 향후 업데이트를 위한 자리입니다.",
-    // },
+    {
+      label: "이력서",
+      value: "PDF 문서 확인",
+      href: "/docs/recruit_jhpark.pdf",
+      description: "상세한 경력 사항과 기술 역량을 정리한 PDF 파일입니다.",
+    },
   ],
 };

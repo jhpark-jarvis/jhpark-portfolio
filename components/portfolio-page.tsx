@@ -130,7 +130,7 @@ function SkillCategoryCard({
           <p className="mt-2 text-sm leading-6 text-slate-300">{description}</p>
         </div>
         <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 font-[family-name:var(--font-mono)] text-xs text-cyan-100">
-          {skills.length}개 기술
+          {skills.length}
         </div>
       </div>
 
@@ -277,11 +277,11 @@ function ContactCard({
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className="surface group rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/25"
+      className="surface group flex h-full flex-col rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/25"
     >
       <p className="text-sm text-slate-400">{label}</p>
       <p className="mt-3 text-lg font-semibold text-slate-50">{value}</p>
-      <p className="mt-3 text-sm leading-6 text-slate-300">{description}</p>
+      <p className="mt-3 flex-1 text-sm leading-6 text-slate-300">{description}</p>
       <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-200">
         <span>연결하기</span>
         <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
@@ -384,9 +384,9 @@ export function PortfolioPage() {
                       스타트업 감각과 운영 중심 실행력을 갖춘 엔지니어
                     </h2>
                   </div>
-                  <div className="hidden rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200 sm:block">
+                  {/* <div className="hidden rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200 sm:block">
                     협업 가능
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="grid gap-4">
@@ -445,9 +445,13 @@ export function PortfolioPage() {
             />
           </motion.div>
 
-          <div className="mt-10 grid gap-6 xl:grid-cols-2">
+          <div className="mx-auto mt-10 max-w-4xl xl:columns-2 xl:gap-6">
             {profile.skills.map((category) => (
-              <motion.div key={category.title} variants={itemVariants}>
+              <motion.div 
+                key={category.title} 
+                variants={itemVariants}
+                className="break-inside-avoid mb-2.5" // 10px vertical margin between cards
+              >
                 <SkillCategoryCard {...category} />
               </motion.div>
             ))}
@@ -544,40 +548,31 @@ export function PortfolioPage() {
           >
             <SectionHeading
               eyebrow="연락처"
-              title="의미 있는 엔지니어링 대화를 환영합니다"
+              title="박재형을 소개합니다."
               description="채용 제안, 백엔드 플랫폼 역할, AI/데이터 엔지니어링 기회, 자동화 중심 시스템 협업 모두 편하게 연락 주세요."
             />
 
-            <div className="flex gap-3">
+            <div className="flex shrink-0 gap-3">
               <a
                 href={profile.socials.github.href}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
                 aria-label="깃허브"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
                 href={profile.socials.email.href}
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
                 aria-label="이메일"
               >
                 <Mail className="h-5 w-5" />
               </a>
-              <a
-                href={profile.socials.linkedin.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
-                aria-label="링크드인"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
             </div>
           </motion.div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {profile.contact.map((item) => (
               <motion.div key={item.label} variants={itemVariants}>
                 <ContactCard {...item} />
