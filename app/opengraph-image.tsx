@@ -45,7 +45,7 @@ export default function OpenGraphImage() {
                 fontSize: 24,
               }}
             >
-              Backend Developer
+              백엔드 개발자
             </div>
             <div
               style={{
@@ -55,7 +55,7 @@ export default function OpenGraphImage() {
                 fontSize: 24,
               }}
             >
-              AI Data Engineer
+              AI 데이터 엔지니어
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>

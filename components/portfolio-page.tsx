@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   ChevronDown,
@@ -14,7 +14,7 @@ import type { ReactNode } from "react";
 
 import { profile } from "@/constants/profile";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -25,25 +25,25 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
 
 const sectionIds = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Career", href: "#career" },
-  { label: "Projects", href: "#projects" },
-  { label: "Awards", href: "#awards" },
-  { label: "Contact", href: "#contact" },
+  { label: "소개", href: "#about" },
+  { label: "기술", href: "#skills" },
+  { label: "경력", href: "#career" },
+  { label: "프로젝트", href: "#projects" },
+  { label: "수상", href: "#awards" },
+  { label: "연락처", href: "#contact" },
 ];
 
 function SectionHeading({
@@ -130,7 +130,7 @@ function SkillCategoryCard({
           <p className="mt-2 text-sm leading-6 text-slate-300">{description}</p>
         </div>
         <div className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1 font-[family-name:var(--font-mono)] text-xs text-cyan-100">
-          {skills.length} skills
+          {skills.length}개 기술
         </div>
       </div>
 
@@ -220,15 +220,15 @@ function ProjectCard({
       </div>
       <div className="mt-6 space-y-5 text-sm leading-6 text-slate-300">
         <div>
-          <p className="font-medium text-slate-100">Overview</p>
+          <p className="font-medium text-slate-100">개요</p>
           <p className="mt-2">{overview}</p>
         </div>
         <div>
-          <p className="font-medium text-slate-100">Challenges</p>
+          <p className="font-medium text-slate-100">도전 과제</p>
           <p className="mt-2">{challenges}</p>
         </div>
         <div>
-          <p className="font-medium text-slate-100">Outcomes</p>
+          <p className="font-medium text-slate-100">성과</p>
           <p className="mt-2">{outcomes}</p>
         </div>
       </div>
@@ -283,7 +283,7 @@ function ContactCard({
       <p className="mt-3 text-lg font-semibold text-slate-50">{value}</p>
       <p className="mt-3 text-sm leading-6 text-slate-300">{description}</p>
       <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-200">
-        <span>Connect</span>
+        <span>연결하기</span>
         <ArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
       </div>
     </a>
@@ -366,7 +366,7 @@ export function PortfolioPage() {
               href="#about"
               className="inline-flex items-center gap-2 text-sm font-medium text-slate-200 transition hover:text-cyan-200"
             >
-              <span>Explore profile</span>
+              <span>프로필 살펴보기</span>
               <ChevronDown className="h-4 w-4 animate-bounce" />
             </a>
           </motion.div>
@@ -378,14 +378,14 @@ export function PortfolioPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.24em] text-slate-400">
-                      Core Profile
+                      핵심 프로필
                     </p>
                     <h2 className="mt-3 text-2xl font-semibold text-slate-50">
-                      Startup-minded engineer, production-first delivery
+                      스타트업 감각과 운영 중심 실행력을 갖춘 엔지니어
                     </h2>
                   </div>
                   <div className="hidden rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-200 sm:block">
-                    Available
+                    협업 가능
                   </div>
                 </div>
 
@@ -412,9 +412,9 @@ export function PortfolioPage() {
         >
           <motion.div variants={itemVariants}>
             <SectionHeading
-              eyebrow="About Me"
-              title="Backend, AI, and operations-minded engineering"
-              description="The focus is practical execution: build systems that teams can depend on, evolve legacy platforms safely, and turn messy data or manual operations into repeatable workflows."
+              eyebrow="소개"
+              title="백엔드, AI, 운영 관점을 함께 보는 엔지니어링"
+              description="핵심은 실용적인 실행입니다. 팀이 신뢰할 수 있는 시스템을 만들고, 레거시 플랫폼을 안전하게 개선하며, 복잡한 데이터와 수작업을 반복 가능한 워크플로로 바꿉니다."
             />
           </motion.div>
           <motion.div
@@ -439,9 +439,9 @@ export function PortfolioPage() {
         >
           <motion.div variants={itemVariants}>
             <SectionHeading
-              eyebrow="Technical Skills"
-              title="A backend-heavy toolkit shaped by delivery"
-              description="A mix of service development, AI prototyping, infrastructure work, and internal tooling experience, presented with clear category depth rather than generic buzzwords."
+              eyebrow="기술 스택"
+              title="실전 경험으로 다져진 백엔드 중심 기술 역량"
+              description="서비스 개발, AI 프로토타이핑, 인프라 작업, 사내 도구 개발 경험을 일반적인 키워드 나열이 아닌 실제 깊이가 보이도록 정리했습니다."
             />
           </motion.div>
 
@@ -464,9 +464,9 @@ export function PortfolioPage() {
         >
           <motion.div variants={itemVariants}>
             <SectionHeading
-              eyebrow="Career History"
-              title="Experience across startups and service environments"
-              description="The timeline shows a consistent pattern: modernize systems, automate repetitive work, and make operational data easier to use."
+              eyebrow="경력"
+              title="스타트업과 서비스 조직을 아우른 경험"
+              description="경력의 흐름은 분명합니다. 시스템을 현대화하고, 반복 업무를 자동화하며, 운영 데이터를 더 쉽게 활용할 수 있도록 만들었습니다."
             />
           </motion.div>
 
@@ -489,9 +489,9 @@ export function PortfolioPage() {
         >
           <motion.div variants={itemVariants}>
             <SectionHeading
-              eyebrow="Major Projects"
-              title="Projects that emphasize systems, tooling, and AI utility"
-              description="Each project highlights the kind of engineering work delivered in production or near-production environments: backend stability, AI-assisted workflows, and internal platform enablement."
+              eyebrow="주요 프로젝트"
+              title="시스템, 도구, AI 활용성에 집중한 프로젝트"
+              description="각 프로젝트는 운영 혹은 운영에 준하는 환경에서 수행한 엔지니어링 작업을 보여줍니다. 백엔드 안정성, AI 보조 워크플로, 내부 플랫폼 고도화가 중심입니다."
             />
           </motion.div>
 
@@ -514,9 +514,9 @@ export function PortfolioPage() {
         >
           <motion.div variants={itemVariants}>
             <SectionHeading
-              eyebrow="Awards & Achievements"
-              title="Recognition for execution, learning speed, and applied AI work"
-              description="Highlights from competition, academic, and startup environments that reflect both technical depth and the ability to deliver under pressure."
+              eyebrow="수상 및 성과"
+              title="실행력, 학습 속도, 응용 AI 역량으로 받은 인정"
+              description="대회, 학업, 스타트업 환경에서의 주요 성과를 통해 기술적 깊이와 압박 속 실행력을 함께 보여줍니다."
             />
           </motion.div>
 
@@ -543,9 +543,9 @@ export function PortfolioPage() {
             className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
           >
             <SectionHeading
-              eyebrow="Contact"
-              title="Open to meaningful engineering conversations"
-              description="Recruiter outreach, backend platform roles, AI/data engineering opportunities, or collaboration around automation-heavy systems are all welcome."
+              eyebrow="연락처"
+              title="의미 있는 엔지니어링 대화를 환영합니다"
+              description="채용 제안, 백엔드 플랫폼 역할, AI/데이터 엔지니어링 기회, 자동화 중심 시스템 협업 모두 편하게 연락 주세요."
             />
 
             <div className="flex gap-3">
@@ -554,14 +554,14 @@ export function PortfolioPage() {
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
-                aria-label="GitHub"
+                aria-label="깃허브"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
                 href={profile.socials.email.href}
                 className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
-                aria-label="Email"
+                aria-label="이메일"
               >
                 <Mail className="h-5 w-5" />
               </a>
@@ -570,7 +570,7 @@ export function PortfolioPage() {
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-white/10 bg-white/5 p-3 text-slate-200 transition hover:border-cyan-400/30 hover:text-cyan-200"
-                aria-label="LinkedIn"
+                aria-label="링크드인"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
