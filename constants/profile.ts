@@ -200,7 +200,7 @@ export const profile: Profile = {
     {
       company: "미디어윌네트웍스 (알바천국)",
       period: "2025.04 ~ 2025.05",
-      summary: "레거시 내부 플랫폼을 안정화하고 고도화하는 단기 현대화 작업을 수행했습니다.",
+      summary: "레거시 내부 플랫폼을 분석하고 고도화하는 단기 현대화 작업을 수행했습니다.",
       highlights: [
         "레거시 백오피스 현대화",
         "ASP.NET Core MVC 마이그레이션",
@@ -211,13 +211,17 @@ export const profile: Profile = {
     {
       company: "모비스(Mobiis)",
       period: "2024.04 ~ 2025.04",
-      summary: "산업 및 사내 지식 활용 사례를 위해 Linux 기반 환경에서 운영 도구와 데이터 워크플로를 구축했습니다.",
+      summary: "국제핵융합기구(ITER)의 테스트 플랫폼 구축(Python, Docker) / Linux 기반 환경에서 운영 도구와 데이터 워크플로를 구축했습니다.",
       highlights: [
         "EPICS 제어 시스템",
         "Linux 환경",
         "Docker 자동화",
         "Whisper 전사 시스템",
         "Keyword Extract 기술 활용 : 문서 검색 플랫폼 구축",
+        "Python",
+        "HMI",
+        "Unittest",
+        "AI 활용 업무 자동화 시스템 구축"
       ],
     },
     {
@@ -248,10 +252,12 @@ export const profile: Profile = {
       highlights: [
         "AI 데모 시스템 구축",
         "DeepFake 탐지 데모",
-        "AI 분석 결과 대시보드 개발",
-        "데이터 크롤링/AI 학습용 데이터 구축",
+        "AI기반 고객 행동 데이터 분석 결과 대시보드 개발",
+        "데이터 크롤링/AI 학습용 데이터셋 구축",
+        "데이터 전처리 환경 구축(라벨링 용 PyQt 개발 등)",
         "Linux AI 서버",
         "컴퓨터 비전 프로젝트",
+        "한국어 욕설탐지 연구 및 데모 서비스 구현",
       ],
     },
   ],
